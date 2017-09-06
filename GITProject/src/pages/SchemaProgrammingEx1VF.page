@@ -1,0 +1,7 @@
+<apex:page controller="SchemaProgrammingEx1">
+          <apex:form >
+          <apex:selectList size="1">
+          <apex:selectoptions value="{!options}"/>
+          </apex:selectlist>
+          </apex:form>
+          </apex:page>

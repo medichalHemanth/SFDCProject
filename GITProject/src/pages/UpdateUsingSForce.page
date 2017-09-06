@@ -1,0 +1,16 @@
+<apex:page controller="HomePageController" showHeader="true">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<apex:stylesheet value="{!URLFOR($Resource.SLDS, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+
+<div class="foo"><!-- Note the "Scoping Class" is foo -->
+
+    <apex:dataTable value="{!rides}" var="record" styleClass="slds-table slds-table--bordered slds-table--striped">
+        <apex:column value="{!record.Name__c}"/>
+        <apex:column value="{!record.Email__c}"/>
+        <apex:column value="{!record.Cost__c}"/>
+    </apex:dataTable>
+
+</div>
+
+</html>
+</apex:page>

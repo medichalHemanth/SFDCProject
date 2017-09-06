@@ -1,0 +1,87 @@
+<apex:page standardController="Account" sidebar="false" docType="html-5.0" showHeader="false" >
+    <!--jQuery TO SHOW THE NEW ACCOUNT FORM ON BUTTON CLICK-->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!--SLDS STYLESHEET STATIC RESOURCE-->
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <apex:form >
+    <div class="slds">
+
+        <div>
+
+            <div class="slds-modal__container slds-modal--form" role="document">
+
+                <div class="slds-modal__content">
+
+                    <div class="slds-form--stacked slds-p-around--medium slds-m-bottom--x-small">
+                        
+                        
+                        <div class="slds-form-element slds-m-top--medium large">
+                            <label class="slds-form-element__label" for="select-01">Consultation Type</label>
+                            <div class="slds-select_container">
+                                <select id="select-01" class="slds-select">
+                                    <option>Select an Option</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                          <div class="slds-form-element slds-m-top--medium large">
+                            <label class="slds-form-element__label" for="select-01"> Language</label>
+                            <div class="slds-select_container">
+                                <select id="select-01" class="slds-select">
+                                    <option>Englishss</option>
+                                    <option>Spanish</option>
+                                </select>
+                            </div>
+                        </div>       
+                                
+                          
+                          <div class="slds-form-element slds-m-top--medium large">
+                            <label class="slds-form-element__label" for="select-01"> Subject</label>
+                            <div class="slds-select_container">
+                                <select id="select-01" class="slds-select">
+                                    <option>English</option>
+                                    <option>Spanish</option>
+                                </select>
+                            </div>
+                        </div>          
+
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="inputNameSample3">Requested Primary Domain</label>
+                            <div class="slds-form-element__control">
+                                <input id="inputNameSample3" class="slds-input" type="text" placeholder="Lewis" value="{!account.name}" />
+                            
+
+                            </div>
+                        </div>
+                        
+                         
+                         <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="textareaSample3">Notes</label>
+                            <div class="slds-form-element__control">
+                              <textarea id="textareaSample3" class="slds-textarea"></textarea>
+                            </div>
+                         </div>      
+   
+
+
+                        <div class="slds-form-element">
+                            <button class="slds-button slds-button--neutral slds-button--brand" type="button"> Create </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </apex:form>
+    <style>
+        .slds .slds-modal__container {
+            padding: 0px 0 !important;
+        }
+                                
+        .slds .slds-button--brand {
+            float: right;
+            width: 110px;
+            text-align: center;
+        }                        
+    </style>
+</apex:page>

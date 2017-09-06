@@ -1,0 +1,14 @@
+<apex:page controller="SoslExmaple1" >
+    <apex:form >
+   <apex:pageBlock title="My search Interface">
+        <apex:inputText value="{!keyword}"/>
+       <apex:commandButton value="Search" action="{!Search_now}"/>
+       <apex:pageBlockTable value="{!results}" var="r">
+           <apex:column value="{!r.Name}"/>
+           <apex:column value="{!r.Industry}"/>
+           <apex:column value="{!r.Type}"/>
+           <apex:column value="{!r.Phone}"/>           
+       </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

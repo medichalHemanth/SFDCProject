@@ -1,0 +1,9 @@
+<apex:page controller="VF2Con">
+<apex:pageblock >
+<apex:pageblockTable value="{!result}" var="a">
+<apex:column value="{!a.id}"/>
+<apex:column value="{!a.Name}"/>
+<apex:column value="{!a.industry}"/>
+</apex:pageblockTable>
+</apex:pageblock>
+</apex:page>

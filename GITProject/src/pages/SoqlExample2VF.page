@@ -1,0 +1,19 @@
+<apex:page controller="SoqlExample2">
+    <apex:form >
+      <apex:pageblock title="opportunity">
+          <apex:pageBlockButtons title="Opportunity"/>
+          <apex:commandButton value="After 2016" action="{!closedAfter2016}"/>
+          <apex:commandButton value="LastYearOpp" action="{!LastYear}"/>
+          <apex:commandButton value="ThisYearOpp" action="{!thisYear}"/>
+          <apex:commandButton value="ThisWeekOpp" action="{!thisWeek}"/>
+          <apex:commandButton value="ThisMonthOpp" action="{!thisMonth}"/>
+        <apex:pageBlockTable value="{!acces}" var="a">
+            <apex:column value="{!a.name}"/>
+            <apex:column value="{!a.StageName}"/>
+            <apex:column value="{!a.Amount}"/>
+            <apex:column value="{!a.CreatedDate}"/>
+            
+          </apex:pageBlockTable>
+        </apex:pageblock>
+    </apex:form> 
+</apex:page>

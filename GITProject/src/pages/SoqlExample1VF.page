@@ -1,0 +1,19 @@
+<apex:page controller="SoqlExample1" >
+    <apex:form >
+    <apex:pageblock title="Soql Result">
+        <apex:pageBlockButtons location="top">
+        <apex:commandButton value="offset" action="{!getoffset}"/>
+        <apex:commandButton value="Limit" action="{!getLimit}"/>
+        <apex:commandButton value="All Records" action="{!getAllRecords}"/>
+        <apex:commandButton value="Recycle Bin" action="{!DeletedRecords}"/>
+        <apex:commandButton value="AOrderName" action="{!orderData}"/>
+        <apex:commandButton value="DOrderName" action="{!orderDataD}"/>
+        <apex:commandButton value="Limit-Offset" action="{!getpagination}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockTable value="{!accs}" var="a">
+        <apex:column value="{!a.Name}"/>
+        <apex:column value="{!a.Industry}"/>        
+        </apex:pageBlockTable>
+        </apex:pageblock>
+        </apex:form>
+</apex:page>

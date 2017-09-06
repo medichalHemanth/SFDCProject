@@ -1,0 +1,50 @@
+<apex:page Controller="LoginController" sidebar="false" showHeader="false">
+    <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+            <style>
+body {
+    background-color: grey;
+}
+  .block {
+  background: white;
+  height:250px;
+  width: 450px;
+  display:inline-block;
+  margin-left: 490px;
+  margin-top: 150px;
+  border: 2px solid black;   
+
+}
+.leg
+ {
+margin-left: 100px;
+margin-top: 40px; 
+ }       
+.bt
+{
+    margin: 4px 2px;
+    font-size: 15px;
+    margin-left: 220px;
+}
+        .header {
+    color: white;
+    background: black;
+    padding: 15px;
+} 
+        
+</style>
+        </head>
+    <apex:form >
+        <div class="header">
+  <h1>Post your rides...!</h1>
+</div>
+       <body>
+         <div class="block">
+           <div class="leg">  <b>Username:</b> <apex:inputField value="{!reg.UserName__c}"/></div>
+           <div class="leg"><b>Password:</b> <apex:inputSecret value="{!reg.Password__c}"/><br/><br/><br/></div>
+           <div class="bt"><apex:commandButton action="{!timecardsignin}" styleClass="btn btn-primary" value="Login"/></div>
+             </div></body>
+         </apex:form>
+</apex:page>

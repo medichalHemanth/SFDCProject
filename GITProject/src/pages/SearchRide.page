@@ -1,0 +1,90 @@
+<apex:page controller="HomePageController" docType="html-5.0" cache="false" sidebar="false" showHeader="false">
+    <head>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css"/>
+    <script type="text/javascript"> var j$ = jQuery.noConflict();
+  var apexFromList =['Hyderabad','Banglore','Pune','Chennai','Delhi','Kolkatta'];           
+      apexFromList.push('{!selectedFrom}');            
+  j$(document).ready(function(){
+      j$(".apexaccountautocomplete").autocomplete({
+          source : apexFromList
+   });  
+    j$("#button").click(function(){
+      alert('somevalue'); 
+     var obj = document.getElementById("{!$Component.form.panel.apexaccountautocomplete}");
+      alert(obj);
+      });   
+  });   
+ var apexToList =['Hyderabad','Banglore','Pune','Chennai','Delhi','Kolkatta'];            
+      apexToList.push('{!selectedTo}');            
+  //on Document ready
+  j$(document).ready(function(){
+      j$(".apexaccountautocomplete").autocomplete({
+          source : apexToList
+          	
+   });  
+    j$("#button").click(function(){
+      alert('somevalue'); 
+     var obj = document.getElementById("{!$Component.form.panel.apexaccountautocomplete}");
+      alert(obj);
+      });   
+  }); 
+    </script>
+    <style>
+body {
+    background-color: grey;
+}
+  .block {
+  background: white;
+  height:290px;
+  width: 450px;
+  display:inline-block;
+  margin-left: 490px;
+  margin-top: 150px;
+     
+
+}
+.leg
+ {
+margin-left: 100px;
+margin-top: 40px; 
+ } 
+.leg1
+ {
+margin-left: 83px;
+margin-top: 40px; 
+ }
+.bt
+{
+    margin: 4px 2px;
+    font-size: 15px;
+    margin-left: 200px;
+}
+.header {
+    color: white;
+    background: black;
+    padding: 15px;
+} 
+         
+        </style>
+        </head>
+    <apex:form >
+ <div class="header">
+  <h1>Search Available Cars...!</h1>
+</div>
+       <body>
+         <div class="block">
+           <div class="leg">   <b>To:</b> <apex:inputText styleClass="apexaccountautocomplete" value="{!selectedTo}" style="width:220px;"/></div>
+           <div class="leg1">   <b>From:</b><apex:inputText styleClass="apexaccountautocomplete" value="{!selectedFrom}" style="width:220px;"/> </div>
+             <div class="leg">  <b>Date:</b> <apex:input type="date" value="{!dat}" style="margin-right:5px;" /></div><br/>
+                <div class="bt"><apex:commandButton action="{!Search}" value="Search"/></div>
+             </div>
+           </body>
+        </apex:form>   
+</apex:page>

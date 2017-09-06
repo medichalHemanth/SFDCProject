@@ -1,0 +1,64 @@
+<apex:page controller="ComposeMail">
+  <apex:form >
+ <style>
+ .fileType {
+    display: block;
+    position: relative;
+    width: 200px;
+    margin: auto;
+    cursor: pointer;
+    border: 0;
+    height: 60px;
+    border-radius: 5px;
+    outline: 0;
+}
+.fileType:hover:after {
+    background: #FF1111;
+}
+.fileType:after {
+    transition: 200ms all ease;
+    border-bottom: 3px solid rgba(0,0,0,.2);
+    background: #000000;
+    background-image:url('http://i.stack.imgur.com/CVpp3.jpg');
+    text-shadow: 0 2px 0 rgba(0,0,0,.2);
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: 'Upload Something';
+    line-height: 60px;
+    border-radius: 5px;
+    }
+ </style>
+  <apex:pageBlock >
+ <apex:pageBlockSection >
+  
+  <apex:pageBlockSectionItem >
+   To Addresses<apex:inputText value="{!toaddre}"/>
+   </apex:pageBlockSectionItem><br/>
+   
+   <apex:pageBlockSectionItem >
+    Subject<apex:inputText value="{!subject1}"/>
+  </apex:pageBlockSectionItem><br/>
+  
+  <apex:pageBlockSectionItem >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <apex:inputTextarea value="{!text1}" richText="true" />
+  </apex:pageBlockSectionItem>
+  <!--file attachment--><br/>
+  
+  <apex:pageBlockSectionItem >
+  <apex:inputFile fileName="{!attach.name}" value="{!attach.body}" styleclass="filetype" id="file" required="true"></apex:inputFile>
+  </apex:pageBlockSectionItem><br/>
+  <apex:pageBlockSectionItem >
+  <apex:outputLabel value="file" for="file"/>
+   <apex:commandButton value="send" action="{!sendmai}"/>
+ </apex:pageBlockSectionItem>
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

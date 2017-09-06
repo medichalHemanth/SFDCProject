@@ -1,0 +1,5 @@
+<apex:page >
+    <apex:form >
+        "{!$CurrentPage.parameters.hemanth}"
+    </apex:form>
+</apex:page>

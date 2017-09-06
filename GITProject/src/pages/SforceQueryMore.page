@@ -1,0 +1,31 @@
+<apex:page >
+            <script src="../../soap/ajax/30.0/connection.js" type="text/javascript">
+    </script>
+    <script>
+    var printresult='\n';
+    var accounts=[];
+    var result=sforce.connection.login("hemanth.medichal@leaninfotech.net","medichal123inPItME2P9XO5pTxudr0n6FPL");
+    sforce.connection.sessionId=result.sessionId;
+    var result=sforce.connection.queryAll("select Name from account limit 3");
+    var queryMore=true;
+    while(queryMore)
+     {
+    var records=myrecords.getArray("records")
+    for(var i=0;i<records.length;i++)
+        {      
+        }
+         if(queryMore.getBoolean("done"))
+             {
+                 queryMore=false;
+        }else
+            {
+      result=sforce.conncetion.queryMore(queryMore.queryLocator);
+                }
+         }
+    for(var i=0;i<records.length;i++)
+        {
+            result=printresult+"Account Name"+records[i].Name+'\n';
+}
+    alert(result);
+    </script>
+</apex:page>

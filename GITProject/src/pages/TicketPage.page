@@ -1,0 +1,5 @@
+<apex:page controller="TicketController">
+    <apex:form >
+    <apex:commandButton action="{!home}" value="Home"/>
+   </apex:form>     
+</apex:page>

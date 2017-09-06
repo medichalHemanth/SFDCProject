@@ -1,0 +1,8 @@
+<apex:page >
+    <apex:form >
+    <apex:pageBlock id="pb">
+     <apex:actionPoller rerender="pb" interval="5"/>   
+        <apex:outputText >{!NOW()}</apex:outputText>
+         </apex:pageBlock>
+    </apex:form>
+</apex:page>

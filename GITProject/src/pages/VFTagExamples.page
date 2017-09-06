@@ -1,0 +1,10 @@
+<apex:page >
+  <apex:form >
+  <apex:pageBlock >
+  <apex:pageBlockSection >ABC</apex:pageBlockSection>    
+  </apex:pageBlock>
+      <apex:pageBlock >
+  <apex:pageBlockSection >ABC</apex:pageBlockSection>    
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

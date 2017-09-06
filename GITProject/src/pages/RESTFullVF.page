@@ -1,0 +1,29 @@
+<apex:page controller="Apex_Rest_DemoController">
+<apex:form >
+    <apex:pageBlock >
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Create Account in SF1 instance" action="{!CreateAccount}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection >
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="aname" value="Name"></apex:outputLabel>
+                <apex:inputText value="{!accName}" id="aname"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="aphone" value="Phone"></apex:outputLabel>
+                <apex:inputText value="{!accPhone}" id="aphone"/>
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <apex:outputLabel for="aw" value="Website"></apex:outputLabel>
+                <apex:inputText value="{!accWebsite}" id="aw"/>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Response">
+        <apex:pageBlockSection >
+            <apex:outputText value="{!Response}"></apex:outputText>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

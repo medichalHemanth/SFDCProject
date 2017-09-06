@@ -1,0 +1,8 @@
+<apex:page >
+<apex:sectionHeader title="LeanInfoTech"/>
+<apex:pageBlock >
+<apex:pageblocksection >
+
+</apex:pageblocksection>
+</apex:pageBlock>
+</apex:page>

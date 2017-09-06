@@ -1,0 +1,20 @@
+<apex:page controller="dataTableCon">
+    <apex:form >
+        <apex:pageblock >
+            <apex:pageBlockTable value="{!rides}" var="ride">
+                <apex:column >
+                    <b> Name:</b> <apex:inputField value="{!ride.Name__c}"/><br/><br/>
+                    <b> Email:</b>  <apex:inputField value="{!ride.Email__c}"/><br/><br/>
+                    <b> AvailableSeates:</b> <apex:inputField value="{!ride.AvailableSeats__c}"/><br/><br/>
+                    <b> Date:</b><apex:inputField value="{!ride.DateTime__c}"/><br/><br/>
+                    <b> CarModel:</b>  <apex:inputField value="{!ride.CarModel__c}"/><br/><br/>
+                    <b> From:</b><apex:inputField value="{!ride.From__c}"/><br/><br/>
+                    <b> To:</b> <apex:inputField value="{!ride.To__c}"/><br/><br/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageblock>
+        <apex:inlineEditSupport event="onclick" showOnEdit="btnSave,btnCancel"  />
+        <apex:commandButton value="Save" action="{!save}" id="btnSave"/>
+        <apex:commandButton value="Cancel" action="{!cancel}" id="btnCancel" reRender="PanelId" />
+    </apex:form>
+</apex:page>

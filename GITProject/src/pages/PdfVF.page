@@ -1,0 +1,114 @@
+<apex:page controller="TicketController" showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" renderAs="pdf" applyBodyTag="false">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<apex:image url="{!$Resource.Blabla}" width="130" height="130"/>
+    <h3>
+    &nbsp;&nbsp; Ticket Details   
+    </h3>
+  <head>
+       <style>
+                 body
+                 {
+                        font-family: Verdana;
+                        font-size: 8px;
+                 }
+               @page
+                {
+                      size: landscape;
+                      padding: 1px;
+                }
+        </style>
+</head>
+<table style = "width: 100%" border = "5">
+          <apex:repeat value="{!Ticket}" var="a">
+              
+              <tr>
+                       <td>TicketNo:{!a.Name}</td>
+                        <td>Name:{!a.Name__c}</td>                       
+                        <td>Age:{!a.Age__c}</td>
+                                
+               </tr>
+              <tr>
+                      
+                      <td>Phone:{!a.Phone__c}</td>
+                       <td>From:{!a.From__c}</td>    
+                       <td>To:{!a.To__c}</td>
+                              
+               </tr>
+              <tr>
+                    <td>Email:{!a.Email__c}</td> 
+                   <td>CarModel:{!a.CarModel__c}</td>  
+                    <td>Cost:{!a.Cost__c}</td>
+                    
+              </tr>
+              <tr> 
+                  <td>Date:{!a.DateTime__c}</td>
+                  <td>SeatNo:{!a.AvailableSeats__c}</td>
+                  <td>ContactNo:{!a.ContactPhone__c}</td>
+              </tr>
+          </apex:repeat>
+</table>       
+   <h3>
+
+<b>Terms and Conditions
+</b></h3>
+ <h5>
+1. Balbla* is ONLY a bus ticket agent. It does not operate bus services of its own. In order to provide a comprehensive choice of bus operators, departure times and prices to customers, it has tied up with many bus operators. 
+
+Balbla’ advice to customers is to choose bus operators they are aware of and whose service they are comfortable with.
+
+Balbla’ responsibilities include: 
+
+    -     Issuing a valid ticket (a ticket that will be accepted by the bus operator) for its’ network of bus operators 
+    -     Providing refund and support in the event of cancellation
+    -     Providing customer support and information in case of any delays / inconvenience
+
+Balbla’ responsibilities do NOT include:
+
+    -    The bus operator’s bus not departing / reaching on time
+    -    The bus operator’s employees being rude
+    -    The bus operator’s bus seats etc not being up to the customer’s expectation
+    -    The bus operator canceling the trip due to unavoidable reasons  
+    -    The baggage of the customer getting lost / stolen / damaged
+    -    The bus operator changing a customer’s seat at the last minute to accommodate a lady / child
+    -    The customer waiting at the wrong boarding point (please call the bus operator to find out the exact
+          boarding point if you are not a regular traveler on that particular bus)
+    -    The bus operator changing the boarding point and/or using a pick-up vehicle at the boarding point to take
+          customers to the bus departure point 
+
+     * Balbla means to include redBus and its partner outlets (Sify, Subhiksha, Done Card, Itz Cash etc)<br/>
+
+2. The arrival and departure times mentioned on the ticket are only tentative timings . However the bus will not leave the source before the time that is mentioned on the ticket.<br/> 
+
+3. Passengers are required to furnish the following at the time of boarding the bus:
+    -    A copy of the ticket (A print out of the ticket or the print out of the ticket e-mail). 
+    -    Identity proof (Driving license, Student ID card, Company ID card, Passport, PAN card or Voter ID card). 
+
+Failing to do so, they may not be allowed to board the bus.<br/> 
+
+4. Change of bus: In case the bus operator changes the type of bus due to some reason, redBus will refund the differential amount to the customer upon being intimated by the customers in 24 hours of the journey. <br/>
+
+5. Cancellation Policy: Cancellation policy not available. <br/>
+
+6. In case one needs the refund to be credited back to his/her bank account, please write your cash coupon details to support@Balbla.in. 
+<br/>
+7. In case a booking confirmation e-mail and sms gets delayed or fails because of technical reasons or as a result of incorrect e-mail ID / phone number provided by the user etc, a ticket will be considered 'booked' as long as the ticket shows up on the confirmation page of www.Balbla.in.<br/>
+
+8. RAIL PNR : Blabla does not warrant or make any representations regarding the use of or the result of the use of the material on the site in terms of their correctness, accuracy, reliability, or otherwise, in so far as such material is derived from other service providers. <br/>
+
+</h5>
+</body>
+    <center><h4>
+      Happy Journey  
+    </h4>
+ <h4 style="background-color:red">
+www.Blabla.com
+</h4></center>
+</html>
+</apex:page>

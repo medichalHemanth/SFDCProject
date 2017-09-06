@@ -1,0 +1,12 @@
+<apex:page controller="LoginController">
+ <apex:form >
+ <apex:pageBlock >
+ <apex:pageblockSection >
+ <apex:pageBlockSectionItem >
+ <apex:inputField value="{!reg.UserName__c}"/>
+ <apex:inputField value="{!reg.Password__c}"/>
+ </apex:pageBlockSectionItem>
+ </apex:pageblockSection>
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

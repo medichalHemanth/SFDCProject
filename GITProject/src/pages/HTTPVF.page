@@ -1,0 +1,20 @@
+<apex:page controller="HTTPController" sidebar="false" showHeader="false">
+    <apex:form >
+    <apex:pageBlock title="This is HTTP Callout Example using JSON">
+    <apex:pageBlockTable value="{!lstWI}" var="a">
+        <apex:column headerValue="Select">
+            <apex:inputCheckbox value="{!a.isChecked}"/>
+        </apex:column>
+      <apex:column headerValue="Id" value="{!a.Id}"/>
+        <apex:column headerValue="Name" value="{!a.name}"/>
+        <apex:column headerValue="Address" value="{!a.address}"/>
+        <apex:column headervalue="Email" value="{!a.email}"/>
+        <apex:column headerValue="Gender" value="{!a.gender}"/>
+        <apex:column headerValue="Mobile" value="{!a.mobile}"/>
+        </apex:pageBlockTable>
+        <apex:pageBlockButtons >
+        <apex:commandButton action="{!dosave}" value="Insert"/>
+        </apex:pageBlockButtons>
+    </apex:pageBlock>
+        </apex:form>
+</apex:page>

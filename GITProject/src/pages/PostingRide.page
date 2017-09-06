@@ -1,0 +1,68 @@
+<apex:page Controller="PostingRideController" sidebar="false" showHeader="false" docType="html-5.0">
+    <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <style>
+div {
+    margin-bottom: 0px;
+    margin-right: 100px;
+    margin-left: 160px;
+}
+legacy {
+    margin-bottom: 0px;
+    margin-right: 120px;
+    margin-left: 150px;    
+}
+</style>
+</head>
+<apex:form >
+     <apex:pageMessages />
+           <apex:pageBlock >
+          <apex:pageBlockSection columns="1">
+            <div><apex:pageBlockSectionItem >
+              <apex:outputLabel value="Name"/>
+              <apex:inputtext value="{!Name}" required="true"/>
+                  </apex:pageBlockSectionItem></div>
+            <div>  <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Available Seats"/>
+              <apex:inputtext value="{!AvailableSeats}" required="true"/>
+                  </apex:pageBlockSectionItem> </div>
+             <div> <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Car Model"/>
+              <apex:inputtext value="{!CarModel}" required="true"/>
+                  </apex:pageBlockSectionItem></div>
+             <div> <apex:pageBlockSectionItem > 
+              <apex:outputLabel value="From"/>
+              <apex:inputtext value="{!frm}" required="true"/>
+              </apex:pageBlockSectionItem></div>
+             <div> <apex:pageBlockSectionItem >
+              <apex:outputLabel value="To"/>
+              <apex:inputtext value="{!too}" required="true"/>
+              </apex:pageBlockSectionItem></div>
+              <apex:pageBlockSectionItem >
+              Date: <apex:input type="date" value="{!dat}"/>
+              </apex:pageBlockSectionItem>
+              <div> <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Phone"/>
+              <apex:inputtext value="{!Phone}" required="true"/>
+              </apex:pageBlockSectionItem></div>
+                  <div> <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Email"/>
+              <apex:inputtext value="{!Email}" required="true"/>
+              </apex:pageBlockSectionItem></div>
+             <div> <apex:pageBlockSectionItem >
+              <apex:outputLabel value="Cost"/>
+              <apex:inputtext value="{!Cost}" required="true"/>
+              </apex:pageBlockSectionItem></div>
+                <div><apex:pageBlockSectionItem >
+              <apex:outputLabel value="Contact"/>
+              <apex:inputtext value="{!Contact}" required="true"/>
+              </apex:pageBlockSectionItem></div>
+              </apex:pageBlockSection>                                                                    
+                 <apex:pageBlockButtons location="bottom">
+              <legacy><apex:commandButton action="{!Doinsert}" styleClass="btn btn-success" value="Register"/></legacy>
+               </apex:pageBlockButtons>
+           </apex:pageBlock>
+     </apex:form>
+</apex:page>

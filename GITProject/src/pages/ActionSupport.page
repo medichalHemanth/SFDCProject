@@ -1,0 +1,13 @@
+<apex:page >
+  <apex:form >
+    <apex:pageBlock >
+    <apex:commandButton value="refresh">
+     <apex:actionSupport event="onclick" reRender="time" status="refresh"/>
+     </apex:commandButton>
+        <apex:actionStatus id="refresh" startText="Refreshing....!" startstyle="color:reds;" ></apex:actionStatus>
+     <apex:outputPanel id="time">
+        <apex:outputText >{!NOW()}</apex:outputText>    
+    </apex:outputPanel>  
+    </apex:pageBlock>
+    </apex:form>	
+</apex:page>

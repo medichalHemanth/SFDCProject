@@ -1,0 +1,19 @@
+<apex:page controller="CustomerServiceController" tabStyle="Account" >
+    <apex:form >
+        <apex:outputText value="{!statusmsg}" style="color:red;font-size:20px;"></apex:outputText>
+    <apex:pageblock >
+    <apex:pageBlockSection >
+        <apex:inputField value="{!objA.Name}"/>
+        <apex:inputField value="{!objA.Phone}"/>  
+    </apex:pageBlockSection>
+        <apex:pageBlockSection >
+        <apex:inputField value="{!objA.BillingCountry}"/>
+        <apex:inputField value="{!objA.BillingCity}"/>     
+    </apex:pageBlockSection>
+        <apex:pageBlockSection >
+        <apex:inputField value="{!objA.Description}"/>     
+    </apex:pageBlockSection>
+   <apex:commandButton value="save" action="{!dosave}"/>     
+    </apex:pageblock>
+    </apex:form>
+</apex:page>

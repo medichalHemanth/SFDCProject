@@ -1,0 +1,10 @@
+<apex:page standardController="Account" id="thePage">
+    <apex:tabPanel switchType="client" selectedTab="name2" id="theTabPanel">
+        <apex:tab label="One" name="name1" id="tabOne">
+        this is the First Content
+        </apex:tab>
+        <apex:tab label="Two" name="name2" id="tabTwo">
+       this is the Second Content
+        </apex:tab>
+    </apex:tabPanel>
+</apex:page>

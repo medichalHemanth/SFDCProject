@@ -1,0 +1,20 @@
+<apex:page >
+        <script src="../../soap/ajax/30.0/connection.js" type="text/javascript">
+    </script>
+    <script>
+    var printresult;
+    var accounts=[];
+    var result=sforce.connection.login("hemanth.medichal@leaninfotech.net","medichal123inPItME2P9XO5pTxudr0n6FPL");
+    sforce.connection.sessionId=result.sessionId;
+    var acc=new sforce.SObject("Account");
+    acc.Name="Ajax Test Account";
+    acc.Industry="Banking";
+    var acc1=new sforce.SObject("Account");
+    acc1.Name='Test Record';
+    acc1.Industry="Energy";
+    accounts.push(acc);
+    accounts.push(acc1);
+    var recresult=sforce.connection.create(accounts);
+    alert(recresult);
+    </script>
+</apex:page>

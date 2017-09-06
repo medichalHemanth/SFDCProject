@@ -1,0 +1,70 @@
+<apex:page controller="PaymentController" sidebar="false" showHeader="false">
+<apex:form >
+<body style="font-family: Arial; font-size: 12px;">
+
+    <div style="width: 100%;" id="mapDiv">
+        <div id="map" style="width: 70%; height: 600px; float: left;margin:0px;color:black;"></div>
+        <div id="panel" style="width: 30%; float: left;margin:0px;"></div>
+    </div>
+    <script type="text/javascript">
+
+     var directionsService = new google.maps.DirectionsService();
+     var directionsDisplay = new google.maps.DirectionsRenderer();
+
+     var map = new google.maps.Map(document.getElementById('map'), {
+               zoom:7,
+               mapTypeId: google.maps.MapTypeId.ROADMAP
+     });
+
+     directionsDisplay.setMap(map);
+     directionsDisplay.setPanel(document.getElementById('panel'));
+
+     var request = {
+       origin: 'Mumbai',
+       destination: 'Navi Mumbai',
+       travelMode: google.maps.DirectionsTravelMode.DRIVING
+     };
+
+     directionsService.route(request, function(response, status) {
+       if (status == google.maps.DirectionsStatus.OK) {
+         directionsDisplay.setDirections(response);
+       }
+     });
+   </script>
+</body>
+<apex:pageBlock >
+<apex:pageBlockTable value="{!rides}" var="a" title="Ride Details...!">
+<apex:column value="{!a.Name__c}"/><br/>
+<apex:column value="{!a.DateTime__c}"/><br/>
+<apex:column value="{!a.CarModel__c}"/><br/>
+<apex:column value="{!a.From__c}"/><br/>
+<apex:column value="{!a.To__c}"/><br/>
+</apex:pageBlockTable>
+ <apex:pageBlockSection >
+ <apex:pageBlockSectionItem >
+<apex:outputLabel value="Name"/>
+<apex:inputtext value="{!Name}" required="true"/>
+</apex:pageBlockSectionItem>   
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Email"/>
+<apex:inputtext value="{!Email}" required="true"/>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Phone"/>
+<apex:inputtext value="{!Phone}" required="true"/>
+</apex:pageBlockSectionItem>
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="Age"/>
+<apex:inputtext value="{!Age}" required="true"/>
+</apex:pageBlockSectionItem>  
+<apex:pageBlockSectionItem >
+<apex:outputLabel value="SeatNo"/>
+<apex:inputtext value="{!AvailableSeates}" required="true"/>
+</apex:pageBlockSectionItem>      
+</apex:pageBlockSection>   
+<apex:pageBlockButtons >
+<apex:commandButton action="{!pay}" value="Pay"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

@@ -1,0 +1,8 @@
+<apex:page controller="CreateContactController">
+    <apex:form >
+        <apex:outputText value="{!Statusmsg}"></apex:outputText>
+   LastName: <apex:inputText value="{!objA.LastName}"/>
+    PhoneNumber:<apex:inputText value="{!objA.Phone}"/>
+    <apex:commandButton value="Insert" action="{!dosave}"/>   
+</apex:form>  
+</apex:page>

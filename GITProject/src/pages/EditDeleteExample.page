@@ -1,0 +1,30 @@
+<apex:page controller="OrderDealsExtension">
+<apex:form id="form" >
+<apex:pageBlock >
+  <apex:pageMessages ></apex:pageMessages>
+  <apex:pageBlockTable value="{!deals}" var="d">
+     <apex:column >
+       <apex:outputLink title="" value="/{!d.id}/e?retURL=/apex/{!$CurrentPage.Name}" style="font-weight:bold">Edit</apex:outputLink>&nbsp;|&nbsp;
+        <apex:commandLink action="{!deleteDeal}" onclick="if(!confirm('Are you sure?')) return false;" style="font-weight:bold">Del
+        <apex:param value="{!d.Id}" name="idToDel" assignTo="{!dealId}"/>
+</apex:commandLink>
+     </apex:column>
+    <apex:column headervalue="Order Number" >
+	<apex:outputLink value="/{!d.id}">
+	<apex:outputField value="{!d.Name__c}"/>
+	</apex:outputLink>
+</apex:column>
+<apex:column value="{!d.Name__c}" />
+<apex:column value="{!d.AvailableSeats__c}" />
+<apex:column value="{!d.DateTime__c}" />
+<apex:column value="{!d.CarModel__c}" />
+<apex:column value="{!d.From__c}" />
+<apex:column value="{!d.To__c}" />
+  </apex:pageBlockTable>
+</apex:pageBlock>
+
+<apex:actionFunction action="{!deleteDeal}" name="DeleteDeal" reRender="form" >
+   <apex:param name="dealid" value="" assignTo="{!SelectedDealId}"/>
+</apex:actionFunction>
+</apex:form>
+</apex:page>

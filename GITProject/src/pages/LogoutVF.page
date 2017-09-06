@@ -1,0 +1,20 @@
+<apex:page showHeader="false" sidebar="false">
+<apex:form >
+    <apex:iframe src="{!$Site.Prefix}/secur/apex/LoginVF" height="1" width="1" />
+  <script>
+    function logout()
+{
+    popup = window.open("{!$Site.Prefix}/secur/apex/LoginVF", "popup", "status=1,width=0,height=0");
+     popup.close();
+     window.location.href="https://c.ap4.visual.force.com/apex/LoginVF"   
+     
+}
+  </script>
+    <div class="container">
+  
+       
+        <a href="" onclick="return logout()" class="">Logout<span class="badge"></span></a>
+        
+    </div>
+</apex:form>
+ </apex:page>

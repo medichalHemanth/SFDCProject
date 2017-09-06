@@ -1,0 +1,20 @@
+<apex:page >
+    <script src="../../soap/ajax/30.0/connection.js" type="text/javascript">
+ //query(query is goig to returns the only which records are there in the object)
+ //queryAll(query is going to retunrs the records which are there in the object as well recyclebin(Deleted Records)
+ //queryMore(query is going to returns the Records LIMIT 200 records at a time.IF i Have 1000 records Its going to create Like batches 200,200,200,200,200);    
+    </script>
+    <script>
+    var printresult;
+    var result=sforce.connection.login("hemanth.medichal@leaninfotech.net","medichal123inPItME2P9XO5pTxudr0n6FPL");
+    sforce.connection.sessionId=result.sessionId;
+    var myresult=sforce.connection.query("select Id,name from account");
+    var records=myresult.getArray("records");
+    for(var i=0;i<records.length;i++)
+        {
+            printresult=printresult+'Account Name'+records[i].Name+'<=MYID=>'+records[i].Id+'\n';
+            
+            }
+    alert(printresult);
+    </script>
+</apex:page>
